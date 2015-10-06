@@ -1,0 +1,86 @@
+
+.moving-bg{
+    background-image: url("../images/a.jpg");
+    background-repeat: repeat-x;
+    background-size:cover;
+     height:100%;
+    width:100%;
+     -webkit-animation:moveit 5s linear infinite;
+    animation:moveit 30s linear infinite;
+    background-size: 200% 100%;
+}
+#ap{
+position: absolute;
+top:200px;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes moveit {
+    from { background-position: 0% 0px;}
+    to { background-position: 200% 0px;}
+}
+
+/* Standard syntax */
+@keyframes moveit {
+     from { background-position: 0% 0px;}
+    to { background-position: 200% 0px;}
+}
+.container{
+border-style: dashed;
+    border-width: 1px;
+    
+    width: 100%;
+    height: 100%;
+}
+
+.ob1{
+position: absolute;
+     -webkit-animation:random 5s linear infinite;
+    animation:random 5s linear infinite;
+}
+
+
+.ob2{
+     -webkit-animation:random2 5s linear infinite;
+    animation:random2 5s linear infinite;
+    position: absolute;
+}
+
+.ob3{
+     -webkit-animation:random3 5s linear infinite;
+    animation:random3 5s linear infinite;
+    position: absolute;
+}
+@-webkit-keyframes random {
+    0% { margin-left: 1300px}
+    100% { margin-left: 0px}
+}
+
+/* Standard syntax */
+@keyframes random {
+    0% { margin-left: 1300px}
+    100% { margin-left: 0px}
+}
+@-webkit-keyframes random {
+    0% { margin-left: 780px}
+    100% { margin-left: 0px}
+}
+
+/* Standard syntax */
+@keyframes random2 {
+    0% { margin-left: 1050px}
+    100% { margin-left: 0px}
+}
+@-webkit-keyframes random2 {
+    0% { margin-left: 1050px}
+    100% { margin-left: 0px}
+}
+
+/* Standard syntax */
+@keyframes random3 {
+    0% { margin-left: 950px}
+    100% { margin-left: 0px}
+}
+@-webkit-keyframes random3 {
+    0% { margin-left: 1200px}
+    100% { margin-left: 0px}
+}
