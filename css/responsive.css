@@ -37,7 +37,8 @@ position: absolute;
      -webkit-animation:random 5s linear infinite;
     animation:random 5s linear infinite;
 }
-
+.animate1{
+}
 
 .ob2{
      -webkit-animation:random2 5s linear infinite;
@@ -45,42 +46,49 @@ position: absolute;
     position: absolute;
 }
 
+.animate1{
+}
+
 .ob3{
      -webkit-animation:random3 5s linear infinite;
     animation:random3 5s linear infinite;
     position: absolute;
 }
+
+.animate1{
+}
+
 @-webkit-keyframes random {
     0% { margin-left: 1300px}
-    100% { margin-left: 0px}
+    100% { margin-left: -30px}
 }
 
 /* Standard syntax */
 @keyframes random {
     0% { margin-left: 1300px}
-    100% { margin-left: 0px}
+    100% { margin-left: -30px}
 }
 @-webkit-keyframes random {
     0% { margin-left: 780px}
-    100% { margin-left: 0px}
+    100% { margin-left: -30px}
 }
 
 /* Standard syntax */
 @keyframes random2 {
     0% { margin-left: 1050px}
-    100% { margin-left: 0px}
+    100% { margin-left: -30px}
 }
 @-webkit-keyframes random2 {
     0% { margin-left: 1050px}
-    100% { margin-left: 0px}
+    100% { margin-left: -30px}
 }
 
 /* Standard syntax */
 @keyframes random3 {
     0% { margin-left: 950px}
-    100% { margin-left: 0px}
+    100% { margin-left: -10px}
 }
 @-webkit-keyframes random3 {
     0% { margin-left: 1200px}
-    100% { margin-left: 0px}
+    100% { margin-left: -30px}
 }

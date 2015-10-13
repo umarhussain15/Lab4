@@ -68,54 +68,106 @@
 
  };
 
+ function ob1r() {
+     document.getElementById('ob1').style.top = Math.floor(Math.random() * 420 + 1) + 'px';
+ };
+
+ function ob2r() {
+     document.getElementById('ob2').style.top = Math.floor(Math.random() * 380 + 1) + 'px';
+ };
+
+ function ob3r() {
+     document.getElementById('ob3').style.top = Math.floor(Math.random() * 450 + 1) + 'px';
+ };
+
  function check() {
-     var height = document.getElementById('ap').offsetTop + 50;
-     var width = document.getElementById('ap').offsetLeft + 80;
-     if (height >= document.getElementById('ob1').offsetTop && (height - 50) < (document.getElementById('ob1').offsetTop + 80) && width >= document.getElementById('ob1').offsetLeft + 25 && (width - 80) < document.getElementById('ob1').offsetLeft + 50) {
-         document.getElementById('ap').style.top = '200px';
-         document.getElementById('ap').style.left = '0px';
+      var planetop = document.getElementById('ap').offsetTop;
+     var height = planetop + 50;
+     var planeleft = document.getElementById('ap').offsetLeft;
+     var width = planeleft + 80;
+     if (height >= (document.getElementById('ob1').offsetTop +10) 
+         && planetop < (document.getElementById('ob1').offsetTop + 70) 
+         && width >= (document.getElementById('ob1').offsetLeft + 25 )
+         && planeleft< (document.getElementById('ob1').offsetLeft + 50)) {
+//         document.getElementById('ap').style.top = '200px';
+//         document.getElementById('ap').style.left = '0px';
          counter = 0;
          document.getElementById("scores").innerText = "0";
+         pause();
          return;
      }
-     if (height >= document.getElementById('ob2').offsetTop && (height - 50) < (document.getElementById('ob2').offsetTop + 120) && width >= document.getElementById('ob2').offsetLeft + 25 && (width - 80) < document.getElementById('ob2').offsetLeft + 50) {
-         document.getElementById('ap').style.top = '200px';
-         document.getElementById('ap').style.left = '0px';
+      if (height >= (document.getElementById('ob2').offsetTop +10) 
+         && planetop < (document.getElementById('ob2').offsetTop + 110) 
+         && width >= (document.getElementById('ob2').offsetLeft + 25 )
+         && planeleft< (document.getElementById('ob2').offsetLeft + 50)) {
+//         document.getElementById('ap').style.top = '200px';
+//         document.getElementById('ap').style.left = '0px';
          counter = 0;
          document.getElementById('scores').innerText = "0";
          //        alert(counter);
-         return;
+          pause();
+          return;
      }
-     if (height >= document.getElementById('ob3').offsetTop && (height - 50) < (document.getElementById('ob3').offsetTop + 50) && width >= document.getElementById('ob3').offsetLeft + 25 && (width - 80) < document.getElementById('ob3').offsetLeft + 50) {
-         document.getElementById('ap').style.top = '200px';
-         document.getElementById('ap').style.left = '0px';
+      if (height >= (document.getElementById('ob3').offsetTop +10) 
+         && planetop < (document.getElementById('ob3').offsetTop + 40) 
+         && width >= (document.getElementById('ob3').offsetLeft + 25 )
+         && planeleft< (document.getElementById('ob3').offsetLeft + 50)) {
+//         document.getElementById('ap').style.top = '200px';
+//         document.getElementById('ap').style.left = '0px';
          counter = 0;
          document.getElementById('scores').innerText = "0";
          //         alert(counter);
-         return;
+          pause();
+          return;
      }
  }
 
  function score() {
-     var height = document.getElementById('ap').offsetTop + 50;
-     var width = document.getElementById('ap').offsetLeft + 80;
-     if ((height < document.getElementById('ob1').offsetTop || (height - 50) > (document.getElementById('ob1').offsetTop + 80)) && (width - 80) > (document.getElementById('ob1').offsetLeft + 50) && (width - 80) <= (document.getElementById('ob1').offsetLeft + 51)) {
+     var planetop = document.getElementById('ap').offsetTop;
+     var height = planetop + 50;
+     var planeleft = document.getElementById('ap').offsetLeft;
+     var width = planeleft + 80;
+     //Obstacle 1
+     if ((height < (document.getElementById('ob1').offsetTop) || planetop > (document.getElementById('ob1').offsetTop + 80)) && planeleft >= (document.getElementById('ob1').offsetLeft + 50) && planeleft <= (document.getElementById('ob1').offsetLeft + 52)) {
 
          counter++;
          document.getElementById('scores').innerText = counter + "";
          //        alert(counter);
      }
-     if ((height < document.getElementById('ob2').offsetTop || (height - 50) > (document.getElementById('ob2').offsetTop + 120)) && (width - 80) > (document.getElementById('ob2').offsetLeft + 50) && (width - 80) <= (document.getElementById('ob2').offsetLeft + 51)) {
+     //Obstacle 2
+     if ((height < (document.getElementById('ob2').offsetTop) || planetop > (document.getElementById('ob2').offsetTop + 120)) && planeleft > (document.getElementById('ob2').offsetLeft + 50) && planeleft <= (document.getElementById('ob2').offsetLeft + 52)) {
+
          counter++;
          //alert(counter);
          document.getElementById('scores').innerText = counter + " ";
      }
-     if ((height < document.getElementById('ob3').offsetTop || (height - 50) > (document.getElementById('ob3').offsetTop + 50)) && (width - 80) > (document.getElementById('ob3').offsetLeft + 50) && (width - 80) <= (document.getElementById('ob3').offsetLeft + 51)) {
+     //Obstacle 3
+     if ((height < (document.getElementById('ob3').offsetTop) || planetop > (document.getElementById('ob3').offsetTop + 50)) && planeleft > (document.getElementById('ob3').offsetLeft + 50)&& planeleft <= (document.getElementById('ob3').offsetLeft + 52)) {
          counter++;
          document.getElementById('scores').innerText = counter + " ";
      }
  }
+ document.getElementById("ob1").addEventListener("webkitAnimationIteration", ob1r);
+ document.getElementById("ob1").addEventListener("animationiteration", ob1r);
+
+ document.getElementById("ob2").addEventListener("webkitAnimationIteration", ob2r);
+ document.getElementById("ob2").addEventListener("animationiteration", ob2r);
+
+ document.getElementById("ob3").addEventListener("webkitAnimationIteration", ob3r);
+ document.getElementById("ob3").addEventListener("animationiteration", ob3r);
  window.onload = generate;
- window.setInterval(generate, 5010);
+ // window.setInterval(generate, 5200);
+function refresh(){
+    window.location.reload();
+};
+function pause(){
+   document.getElementById("ob1").style.webkitAnimationPlayState= 'paused';
+    document.getElementById("ob2").style.webkitAnimationPlayState= 'paused';
+    document.getElementById("ob3").style.webkitAnimationPlayState= 'paused';
+    document.getElementById("background").style.webkitAnimationPlayState= 'paused';
+    document.getElementById('ap').style.display='hidden';
+    document.getElementById('scores').innerText = "Game Over";
+    document.onkeydown=null;
+};
  window.setInterval(check, 0);
  window.setInterval(score, 0);

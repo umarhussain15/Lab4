@@ -1,0 +1,29 @@
+
+ function check() {
+     var height = document.getElementById('ap').offsetTop + 50;
+     var width = document.getElementById('ap').offsetLeft + 80;
+     if (height >= document.getElementById('ob1').offsetTop && (height - 50) < (document.getElementById('ob1').offsetTop + 80) && width >= document.getElementById('ob1').offsetLeft + 25 && (width - 80) < document.getElementById('ob1').offsetLeft + 50) {
+         document.getElementById('ap').style.top = '200px';
+         document.getElementById('ap').style.left = '0px';
+         counter = 0;
+         document.getElementById("scores").innerText = "0";
+         return;
+     }
+     if (height >= document.getElementById('ob2').offsetTop && (height - 50) < (document.getElementById('ob2').offsetTop + 120) && width >= document.getElementById('ob2').offsetLeft + 25 && (width - 80) < document.getElementById('ob2').offsetLeft + 50) {
+         document.getElementById('ap').style.top = '200px';
+         document.getElementById('ap').style.left = '0px';
+         counter = 0;
+         document.getElementById('scores').innerText = "0";
+         //        alert(counter);
+         return;
+     }
+     if (height >= document.getElementById('ob3').offsetTop && (height - 50) < (document.getElementById('ob3').offsetTop + 50) && width >= document.getElementById('ob3').offsetLeft + 25 && (width - 80) < document.getElementById('ob3').offsetLeft + 50) {
+         document.getElementById('ap').style.top = '200px';
+         document.getElementById('ap').style.left = '0px';
+         counter = 0;
+         document.getElementById('scores').innerText = "0";
+         //         alert(counter);
+         return;
+     }
+ }
+window.setInterval(check, 0);

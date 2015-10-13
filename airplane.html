@@ -9,7 +9,7 @@
 
 <body>
    
-    <div class="container moving-bg" style=" width: 100%; height: 500px;">
+    <div id="background" class="container moving-bg" style=" width: 100%; height: 500px;">
 
 <!--        <div id="maind" class="moving-bg">-->
            
@@ -24,10 +24,12 @@
 
     <div class="container"  style="display:flex;justify-content:center;align-items:center;">
         
-        <h1 style="display:inline">Your Score: </h1> <h1 id="scores" style="display:inline">0</h1>
+        <h1 style="display:inline">Your Score: </h1> <h1 id="scores" style="display:inline">0</h1><br>
+        
 
         
     </div>
+<div class="container" style="display:flex;justify-content:center;align-items:center;"><button onclick="refresh()">Restart Game</button></div>
     <script src="js/control.js"></script>
 </body>
 
